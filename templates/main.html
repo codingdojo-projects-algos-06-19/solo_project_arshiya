@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap 4 Website Example</title>
+  <title>Bright Ideas</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- <script src="/static/js/main.js"></script> -->
   <style>
   .fakeimg {
     height: 100px;
@@ -18,106 +19,28 @@
 <body>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
+  
   <h1>Welcome to Bright Ideas!</h1>
   <p>We all have amazing ideas!</p> 
+  
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="#">Home</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <!-- Button to Open the Modal -->
-        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">Register</button>
-      </li>
-      <li class="nav-item">
-        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal2">Sign in</button>
-      </li>   
-    </ul>
-  </div>  
+    <a class="navbar-brand" href="#">About</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+        <li class="nav-item">
+            <!-- Button to Open the registration and login page-->
+            <a class="navbar-brand" href="/main">Sign-in</a>
+        </li>
+    </div>  
 </nav>
 
 <div class="container" style="margin-top:30px">
-    <!-- The register Modal -->
-    <div class="modal" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-        
-                <!-- Modal Header -->
-                <div class="modal-header">
-                <h4 class="modal-title">Register</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <form action="/process" method='POST'>
-                        <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
-                        </div>
-                        <div class="form-group">
-                            <label for="al-name">Alias:</label>
-                            <input type="text" class="form-control" name="alias" id="al-name" placeholder="Enter nick name">
-                        </div>
-                        <div class="form-group">
-                            <label for="name">E-mail:</label>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Password:</label>
-                            <input type="password" class="form-control" name="pwd" id="pwd" placeholder="Enter password">
-                        </div>
-                        <p>* Password should be atleast 8 characters</p>
-                        <div class="form-group">
-                            <label for="name">Confirm Password:</label>
-                            <input type="password" class="form-control" name="cpwd" id="cpwd" placeholder="Enter password again">
-                        </div>
-                        <div class="form-group form-check">
-                            <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" name="remember"> Remember me
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Register</button>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
     
-    <!-- The login Modal -->
-    <div class="modal" id="myModal2">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Already registered? Sign-in below</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <form action="/process-login" method='POST'>
-                        <div class="form-group">
-                            <label for="name1">E-mail:</label>
-                            <input type="email" class="form-control" name="email1" id="email1" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label for="pwd1">Password:</label>
-                            <input type="password" class="form-control" name="pwd1" id="pwd1" placeholder="Enter password">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Log in</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <div class = "row">
         <div class = "col-sm-4">
             <img class="img-fluid" src="/static/img/b2.jpg" alt="Chania">
