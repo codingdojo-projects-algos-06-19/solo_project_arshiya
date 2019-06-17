@@ -108,13 +108,7 @@ def success_login():
         data = {'id': k['id'] }
         mysql1 = connectToMySQL('solo_project')
         result1 = mysql1.query_db(query1,data)
-        # print("###################################3")
-        # print(result1)
         l_count[k['id']] = result1[0]['likes']
-    # print("***************************")
-    # print(result1)
-    # print(l_count)
-
     return render_template('index.html', ideas=result, likes=l_count)
 
 @app.route('/likes/<post_id>/add_like',methods=['POST'])
@@ -126,7 +120,6 @@ def add_like(post_id):
     }
     mysql = connectToMySQL('solo_project')
     new_user_id = mysql.query_db(query, data)
-    print(new_user_id)
     flash("You liked a post just now!")
     return redirect('/ideas')
 
@@ -149,12 +142,18 @@ def user_info(user_id):
     query = 'SELECT count(likes_info.users_id) as t_likes from user_info join likes_info on likes_info.users_id = user_info.id where users_id=%(id)s;'
     data1 = { "id": user_id }
     user_likes = mysql.query_db(query, data1)
-    print("*******************(((((((((((((((")
-    print(user_info)
-    print(user_likes)
-
     return render_template("user_info.html", info = user_info[0], t_likes=user_likes[0])
-
+@app.route('/bright_ideas/<post_id>')
+def see_post(post_id):
+    mysql = connectToMySQL('solo_project')
+    query = "SELECT posts.id, user_info.id as user_id, user_info.alias, posts.post FROM posts join user_info on user_info.id = posts.user_id where posts.id=%(id)s;"
+    data = {'id': post_id}
+    post_data = mysql.query_db(query, data)
+    mysql = connectToMySQL('solo_project')
+    query1 = "SELECT Distinct likes_info.posts_id, likes_info.users_id, user_info.alias, user_info.name FROM solo_project.likes_info join user_info on likes_info.users_id=user_info.id where posts_id = %(id)s;"
+    data = {'id': post_id}
+    likes_data = mysql.query_db(query1, data)
+    return render_template("likes_info.html", post_data=post_data[0], likes_data=likes_data)
 @app.route('/log_out')
 def success_logout():
     session.clear()

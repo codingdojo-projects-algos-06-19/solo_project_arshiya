@@ -44,6 +44,13 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </li>
+            <li class="nav-item">
+                    <!-- Button to Open the registration and login page-->
+                    <a class="navbar-brand" href="/log_out">Logout</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+            </li>
         </div>  
     </nav>
     <div class="container" style="margin-top:30px">
@@ -55,17 +62,19 @@
                 </div>
                 <div class = "col-sm-8">
                     <div class="jumbotron" >
-                        <h5>Name: {{info['name']}}</h5>
-                        <h5>Alias: {{info['alias']}}</h5>
-                        <h5>Email: {{info['email']}}</h5>
+                        <h6>Name: {{info['name']}}</h6>
+                        <h6>Alias: {{info['alias']}}</h6>
+                        <h6>Email: {{info['email']}}</h6>
                         <hr>
-                        <h5>Total Number of Posts: {{info['t_posts']}}</h5>
-                        <h5>Total Number of Likes: {{t_likes['t_likes']}}</h5>
+                        <h6>Total Number of Posts: {{info['t_posts']}}</h6>
+                        <h6>Total Number of Likes: {{t_likes['t_likes']}}</h6>
                     </div>
                 </div>
             </div>
     </div>
-
+    <div class="jumbotron text-center" style="margin-bottom:0">
+            <p>Copyright © 2019 · BrightIdeas</p>
+    </div>
     
 </body>
 </html>

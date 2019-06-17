@@ -82,7 +82,7 @@
                 </form>
                 
                 {%if one_idea['id'] in likes%}
-                    <a class="" href="#">{{ likes[ one_idea['id'] ]}} people like this.</a>
+                    <a class="" href="/bright_ideas/{{one_idea['id']}}">{{ likes[ one_idea['id'] ]}} people like this.</a>
                 {%endif%}
                 {%if one_idea['user_id'] == session['userid']:%}
                     <form  class="sub_form" action="/posts/{{one_idea['id']}}/delete" method='POST'>
